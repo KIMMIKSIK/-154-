@@ -141,3 +141,28 @@ const mouse = {
 };
 
 
+**6. What's the output?**
+
+```jsx
+let c = { greeting: 'Hey!' };
+let d;
+
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+```
+
+- A: `Hello`
+- B: `Hey!`
+- C: `undefined`
+- D: `ReferenceError`
+- E: `TypeError`
+
+>Answer A
+
+이번 문제는 **값의 데이터 타입을 이해해야 한다.** 그중에서도 값이 전달(복사)될 때 값에 의한 전달이 이루어지는 원시타입의 값과 참조에 의한 전달이 이루어지는 객체타입의 값에 대한 이해를 해야한다. 자바스크립트의 객체 타입의 값은 변경가능한 값으로 이루어져있다.
+
+- **여기서 변경 가능하다는 것은 객체 내부의 원시타입의 값에 변화를 말하는 것이지 객체 값 그 자체를 의미하는 것은 아니다.**
+
+즉, 원시타입의 경우 메모리공간의 값이 있는 주소를 그대로 복사하여 넘겨주지만 객체타입의 값의 경우 복사하여 넘겨주는 주소가 값이 들어있는 주소가 아닌 메모리공간 어딘가에 그 객체가 존재하는 곳의 주소를 복사해서 넘겨준다. **쉽게 말해 객체의 주소를 복사해 주는 것이다.** 따라서 객체 타입의 값을 복사하게 되면 **결국 같은 주소를 참조하게 되고 하나의 객체를 가리키는 형태이다.**
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dcf959c6-f40d-44e1-ab6a-abf8926690c1/Untitled.png)
