@@ -168,3 +168,75 @@ console.log(d.greeting);
 
 ![image](https://user-images.githubusercontent.com/98815511/161744226-961a32d3-8da4-46f8-a2e4-996381537d47.png)
 
+
+**7. What's the output?**
+
+```jsx
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log(a == b);
+console.log(a === b);
+console.log(b === c);
+```
+
+- A: `true` `false` `true`
+- B: `false` `false` `true`
+- C: `true` `false` `false`
+- D: `false` `true` `true`
+
+>Answer C
+
+이 문제는 **일치연산자(===)와 동등연산자(==)의 개념을 이해해야 한다.** 동등연산자(==)의 경우 비교하는 두 피연산자의 값만 비교하고 타입을 비교하진 않는다. 즉 3==”3” 은 true가 나오는 형태로 암묵적으로 같은 타입으로 만들어 비교하게 된다. 
+
+일치연사자(===)의 경우는 값과 타입을 모두 비교하여 타입도 같아야만 true로 인정하게 된다.
+
+//참조
+
+//NaN === NaN  > false 
+
+//Nan은 자신과 일치하지 않는 유일한 값이다. 따라서 숫자값이 NaN인지 조사하려면
+
+//isNaN(NaN) 빌트인함수 isNaN을 사용하거나 object.is(NaN,NaN) 메서드를 사용하는 것이 좋다.
+
+//object.is(+0,-0), object.is(NaN,NaN)
+
+**8. What's the output?**
+
+```
+class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+    return this.newColor;
+  }
+
+  constructor({ newColor = 'green' } = {}) {
+    this.newColor = newColor;
+  }
+}
+
+//{ newColor = 'green' } = {} 이렇게하면 기본값이 들어있는 형태가됨
+//그냥 인수에 기본값 넣어준것을 객체로 표현했다고 보면 된다. ex) a=3 이런식으로 인수준 느낌
+const freddie = new Chameleon({ newColor: 'purple' });
+console.log(freddie.colorChange('orange'));
+```
+
+- A: `orange`
+- B: `purple`
+- C: `green`
+- D: `TypeError`
+
+>Answer:  D
+
+이번 문제는 **클래스 내 정적메소드인 static의 의미를 알아야 한다.** 자바스크립트의 클래스 문법에서 클래스 블록안에서 static으로 정의된 함수는 정적메소드로 입력된다. 즉 클래스 Chameleon이라는 생성자 함수(클래스는 곧 생성자 함수와 같다)자체의 메소드이다. static을 붙이지 않고 메소드 축약표현으로 작성되는 함수는 Chameleon클래스의 프로토타입 메소드가 되고 constructor 함수는 생성자로서 생성하게 되는 인스턴스의 프로퍼티가 입력된다.
+
+정적메소드는 클래스 자체의 프로퍼티 메소드이기 때문에 인스턴스는 상속받아 사용할 수 없다. 
+
+인스턴스가 상속받는 메소드 및 프로퍼티는 오직 프로토타입 체인에 연결이 된 것만 가능하다.
+
+정적메소드를 사용하기 위해서는 인스턴스를 생성하지 않고 바로 Chameleon.colorChange() 하면된다.
+
+- 기본 매개변수 참조:[https://starkying.tistory.com/entry/Javascript-기본-매개변수Default-Function-Parameters](https://starkying.tistory.com/entry/Javascript-%EA%B8%B0%EB%B3%B8-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98Default-Function-Parameters)
+
+//위에 constructor에 사용된 인수는 기본 매개변수의 새로운 방법으로 배열도 저런식으로 사용 가능하며 위에 문제의 경우 인수를 객체 형태로 주어야 한다. { newColor: 'purple' } 하지만 ={}이 사용된다면 그냥 () 인수없이도 호출할 수 있다.(={}없는데 인수없이 호출하면 에러가 뜨게된다.)
