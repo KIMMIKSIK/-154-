@@ -240,3 +240,51 @@ console.log(freddie.colorChange('orange'));
 - 기본 매개변수 참조:[https://starkying.tistory.com/entry/Javascript-기본-매개변수Default-Function-Parameters](https://starkying.tistory.com/entry/Javascript-%EA%B8%B0%EB%B3%B8-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98Default-Function-Parameters)
 
 //위에 constructor에 사용된 인수는 기본 매개변수의 새로운 방법으로 배열도 저런식으로 사용 가능하며 위에 문제의 경우 인수를 객체 형태로 주어야 한다. { newColor: 'purple' } 하지만 ={}이 사용된다면 그냥 () 인수없이도 호출할 수 있다.(={}없는데 인수없이 호출하면 에러가 뜨게된다.)
+
+**9. What's the output?**
+
+```
+let greeting;
+greetign = {}; // Typo!
+console.log(greetign);
+```
+
+- A: `{}`
+- B: `ReferenceError: greetign is not defined`
+- C: `undefined`
+
+>Answer: A
+
+자세히보면 let으로 선언한 변수와 값을 할당한 변수가 다르다. 즉 greetign으로 잘못 입력한 변수는
+
+let을 통해서 선언된 변수가 아니라 자바스크립트가 **암묵적으로 전역에 생성한 변수**가 된다.
+
+이런걸 **암묵적 전역**이라고 한다. 
+
+즉 변수 window.greetign의 형태가 된다.
+
+**10. What happens when we do this?**
+
+```
+function bark() {
+  console.log('Woof!');
+}
+
+bark.animal = 'dog';
+```
+
+- A: Nothing, this is totally fine!
+- B: `SyntaxError`. You cannot add properties to a function this way.
+- C: `"Woof"` gets logged.
+- D: `ReferenceError`
+
+>Answer : A
+
+**자바스크립트의 함수는 특별한 형식의 객체이다!** 즉 프로퍼티를 가질수 있다는 말이다.
+
+함수 내용의 추가가 아니라 함수 객체로서의 프로퍼티로 animal:”dog”가 추가된다.
+
+console.log(bark)
+
+결과: `{ [Function: bark] animal: 'dog' }`
+
