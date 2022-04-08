@@ -20,9 +20,15 @@ sayHi();
 - C: `ReferenceError` and `21`
 - D: `undefined` and `ReferenceError`
 
->Answer : D
+
+<details markdown="1">
+<summary>Answer</summary>
+D
 
 이 문제는 **변수의 호이스팅을 물어보고 있다.** 자바스크립트의 모든 선언문은 호이스팅을 통해 자신의 스코프의 최상단으로 이동해 런타임 전 가장 먼저 선언된다. var의 경우에는 선언과 동시에undefined로 초기화가 이루어져 출력이 가능하지만 let으로 선언된 변수의 경우 호이스팅을 통해 선언은 되어도 자신의 선언문에 도달했을 때 비로소 초기화가 이루어진다. 그 전까지는 변수에 접근하지 못하게 된다. 이때 선언되고 선언문에 도달하기전까지 접근할 수 없는 이 사각지대를 일시적 사각지대(TDZ)라고 한다. 
+</details>
+
+
 
 **2. What's the output?**
 
@@ -40,7 +46,11 @@ for (let i = 0; i < 3; i++) {
 - B: `0 1 2` and `3 3 3`
 - C: `3 3 3` and `0 1 2`
 
->Answer :  C
+
+
+<details markdown="1">
+<summary>Answer</summary>
+C
 
 이 문제는 **비동기로 작동하게 되는 콜백함수와 클로저에 대한 이해**와 더불어 **블록레벨 스코프, 함수레벨 스코프**에 대한 지식을 필요로 한다. 
 
@@ -51,6 +61,10 @@ for (let i = 0; i < 3; i++) {
 두번째의 경우 let은 블록레벨스코프로 반복문이 돌때마다 새로운 let을 생성하게 된다. 즉 화살표 함수들은 각자 자신의 선언시점의 for블록안에 선언된 각각의 변수 i를 가리키게 되어 0,1,2를 출력할 수 있게 되는 것이다. 
 
 참조:[https://www.youtube.com/watch?v=RZ3gXcI1MZY](https://www.youtube.com/watch?v=RZ3gXcI1MZY)
+</details>
+
+
+
 
 **3. What's the output?**
 
@@ -74,11 +88,20 @@ console.log(shape.perimeter());
 - C: `20` and `63`
 - D: `NaN` and `63`
 
->Answer B
+
+
+<details markdown="1">
+<summary>Answer</summary>
+B
+
 
 이 **문제는 화살표함수에는 this가 없다는 걸 알아야 이해할 수 있다.** this는 실행 컨텍스트가 생성될 때 함께 바인딩 됩니다. 즉 함수를 호출할 때 결정이 된다는 것인데 this는 기본적으로는 전역객체를(브라우저: window, node.js: global)을 가리킵니다. 객체내 메소드의 경우 호출시 객체에 의해 호출되고 this는 객체 shape을 가리키게 됩니다. 즉 this.radius가 10이 되는 것입니다. 하지만 화살표 함수는 this가 존재하지 않고 결국 this를 찾기위해 자신의 스코프체인의 상위로 올라가게 됩니다. 결국 자신의 상위 스코프인 전역으로 가서 this를 찾게 되고 그 this가 의미하는 것은 전역객체이기 때문에 존재하지 않는 radius를 가리키게 됩니다. 따라서 2 * undefined는 NaN이 되는 것입니다. 
 
 -참조:[https://blog.naver.com/websearch/222122306928](https://blog.naver.com/websearch/222122306928)(자바스크립트Math객체 예제)
+
+
+</details>
+
 
 **4. What's the output?**
 
@@ -91,13 +114,18 @@ console.log(shape.perimeter());
 - B: `false` and `NaN`
 - C: `false` and `false`
 
->Answer A
+
+<details markdown="1">
+<summary>Answer</summary>
+A
 
 문제는 **암묵적 타입변환을 물어보고 있다.** 자바스크립트는 암묵적으로 데이터 타입을 변환하는 경우가 있는데 true의 경우 + 단항 연산자를 만나면서 number타입으로 변환되고 1을 출력합니다.
 
 (true는 1, false는 0을 의미)
 
 두번째의 경우 문자열의 값에 부정을 의미하는 논리연산자 !를 사용하여 문자열의 데이터타입은 암묵적으로 boolen타입이 되고 “”빈값이 아닌 'Lydia'는 truthy를 의미하여 그의 부정이 false가 출력됩니다.
+</details>
+
 
 **5. Which one is true?**
 
@@ -117,7 +145,10 @@ const mouse = {
 - C: `mouse[bird["size"]]` is not valid
 - D: All of them are valid
 
->Answer  A
+
+<details markdown="1">
+<summary>Answer</summary>
+A
 
 이 문제는 **점 표기법과 대괄호 표기법의 차이를 이해해야 한다.** 점 표기법의 경우 그 뒤에 오는 것을 프로퍼티 키로 인식하고 찾게 된다. 즉 1번의 경우 mouse라는 객체안에 bird라는 키에 그 안에 또 size라는 프로퍼티 키를 가진 객체가 있는지를 물어보게되고 이는 존재하지 않기 때문에 유효하지 않다. (밑에 그림을 물어보는 것이라 할 수 있다.)
 
@@ -141,6 +172,11 @@ const mouse = {
 };
 
 
+</details>
+
+
+
+
 **6. What's the output?**
 
 ```jsx
@@ -158,7 +194,9 @@ console.log(d.greeting);
 - D: `ReferenceError`
 - E: `TypeError`
 
->Answer A
+<details markdown="1">
+<summary>Answer</summary>
+A
 
 이번 문제는 **값의 데이터 타입을 이해해야 한다.** 그중에서도 값이 전달(복사)될 때 값에 의한 전달이 이루어지는 원시타입의 값과 참조에 의한 전달이 이루어지는 객체타입의 값에 대한 이해를 해야한다. 자바스크립트의 객체 타입의 값은 변경가능한 값으로 이루어져있다.
 
@@ -167,6 +205,9 @@ console.log(d.greeting);
 즉, 원시타입의 경우 메모리공간의 값이 있는 주소를 그대로 복사하여 넘겨주지만 객체타입의 값의 경우 복사하여 넘겨주는 주소가 값이 들어있는 주소가 아닌 메모리공간 어딘가에 그 객체가 존재하는 곳의 주소를 복사해서 넘겨준다. **쉽게 말해 객체의 주소를 복사해 주는 것이다.** 따라서 객체 타입의 값을 복사하게 되면 **결국 같은 주소를 참조하게 되고 하나의 객체를 가리키는 형태이다.**
 
 ![image](https://user-images.githubusercontent.com/98815511/161744226-961a32d3-8da4-46f8-a2e4-996381537d47.png)
+
+</details>
+
 
 
 **7. What's the output?**
@@ -185,8 +226,10 @@ console.log(b === c);
 - B: `false` `false` `true`
 - C: `true` `false` `false`
 - D: `false` `true` `true`
-
->Answer C
+- 
+<details markdown="1">
+<summary>Answer</summary>
+C
 
 이 문제는 **일치연산자(===)와 동등연산자(==)의 개념을 이해해야 한다.** 동등연산자(==)의 경우 비교하는 두 피연산자의 값만 비교하고 타입을 비교하진 않는다. 즉 3==”3” 은 true가 나오는 형태로 암묵적으로 같은 타입으로 만들어 비교하게 된다. 
 
@@ -201,6 +244,10 @@ console.log(b === c);
 //isNaN(NaN) 빌트인함수 isNaN을 사용하거나 object.is(NaN,NaN) 메서드를 사용하는 것이 좋다.
 
 //object.is(+0,-0), object.is(NaN,NaN)
+
+</details>
+
+
 
 **8. What's the output?**
 
@@ -227,7 +274,10 @@ console.log(freddie.colorChange('orange'));
 - C: `green`
 - D: `TypeError`
 
->Answer:  D
+<details markdown="1">
+<summary>Answer</summary>
+D
+
 
 이번 문제는 **클래스 내 정적메소드인 static의 의미를 알아야 한다.** 자바스크립트의 클래스 문법에서 클래스 블록안에서 static으로 정의된 함수는 정적메소드로 입력된다. 즉 클래스 Chameleon이라는 생성자 함수(클래스는 곧 생성자 함수와 같다)자체의 메소드이다. static을 붙이지 않고 메소드 축약표현으로 작성되는 함수는 Chameleon클래스의 프로토타입 메소드가 되고 constructor 함수는 생성자로서 생성하게 되는 인스턴스의 프로퍼티가 입력된다.
 
@@ -240,6 +290,9 @@ console.log(freddie.colorChange('orange'));
 - 기본 매개변수 참조:[https://starkying.tistory.com/entry/Javascript-기본-매개변수Default-Function-Parameters](https://starkying.tistory.com/entry/Javascript-%EA%B8%B0%EB%B3%B8-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98Default-Function-Parameters)
 
 //위에 constructor에 사용된 인수는 기본 매개변수의 새로운 방법으로 배열도 저런식으로 사용 가능하며 위에 문제의 경우 인수를 객체 형태로 주어야 한다. { newColor: 'purple' } 하지만 ={}이 사용된다면 그냥 () 인수없이도 호출할 수 있다.(={}없는데 인수없이 호출하면 에러가 뜨게된다.)
+</details>
+
+
 
 **9. What's the output?**
 
@@ -253,7 +306,11 @@ console.log(greetign);
 - B: `ReferenceError: greetign is not defined`
 - C: `undefined`
 
->Answer: A
+
+<details markdown="1">
+<summary>Answer</summary>
+A
+
 
 자세히보면 let으로 선언한 변수와 값을 할당한 변수가 다르다. 즉 greetign으로 잘못 입력한 변수는
 
@@ -262,6 +319,9 @@ let을 통해서 선언된 변수가 아니라 자바스크립트가 **암묵적
 이런걸 **암묵적 전역**이라고 한다. 
 
 즉 변수 window.greetign의 형태가 된다.
+
+</details>
+
 
 **10. What happens when we do this?**
 
@@ -278,7 +338,10 @@ bark.animal = 'dog';
 - C: `"Woof"` gets logged.
 - D: `ReferenceError`
 
->Answer : A
+<details markdown="1">
+<summary>Answer</summary>
+A
+
 
 **자바스크립트의 함수는 특별한 형식의 객체이다!** 즉 프로퍼티를 가질수 있다는 말이다.
 
@@ -287,4 +350,70 @@ bark.animal = 'dog';
 console.log(bark)
 
 결과: `{ [Function: bark] animal: 'dog' }`
+</details>
+
+
+**11. What's the output?**
+
+```
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const member = new Person('Lydia', 'Hallie');
+Person.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+console.log(member.getFullName());
+```
+
+- A: `TypeError`
+- B: `SyntaxError`
+- C: `Lydia Hallie`
+- D: `undefined` `undefined`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+A
+
+**이 문제는 정적메소드와 프로토타입 메소드**의 개념을 알아야한다. 위에 문제에서 Person.getFullname은 함수 자체 메소드로 getFullname을 등록한 것이다(정적메소드). 즉 프로토타입 체인이 아니라 그냥 함수에 프로퍼티를 추가한게 된다. 따라서 생성된 인스턴스로 접근하는 것이 아니라 함수자체로 호출해야 나온다. 만약 생성된 인스턴스 객체로 호출하고 싶다면 getFullname함수를 person.prototype.getFullname으로 호출하면 가능하다. 
+</details>
+
+
+**12. What's the output?**
+
+```
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const lydia = new Person('Lydia', 'Hallie');
+const sarah = Person('Sarah', 'Smith');
+
+console.log(lydia);
+console.log(sarah);
+```
+
+- A: `Person {firstName: "Lydia", lastName: "Hallie"}` and `undefined`
+- B: `Person {firstName: "Lydia", lastName: "Hallie"}` and `Person {firstName: "Sarah", lastName: "Smith"}`
+- C: `Person {firstName: "Lydia", lastName: "Hallie"}` and `{}`
+- D: `Person {firstName: "Lydia", lastName: "Hallie"}` and `ReferenceError`
+
+<details markdown="1">
+<summary>Answer</summary>
+A
+
+이번 문제는 **생성자 함수를 new연산자로 호출했을때와 일반 함수처럼 호출 했을 때**의 차이를 물어보고 있다. 생성자 함수는 특별할 것이 없다. 단지 생성되는 인스턴스와 바인딩되는 this를 식별자(미래의 프로퍼티 키) 앞에 붙여준 것 뿐이다. new 연산자와 함께 호출한다면 새로운 인스턴스 객체를 생성하고 인자로 입력해준  'Lydia', 'Hallie'가 각각 lydia객체의 프로퍼티 값으로 할당이 된다. 하지만 일반함수처럼 호출했을 때는 그냥 평범한 함수처럼 동작하게 된다. 즉 this.firstName, this.lastName
+객체 window에 프로퍼티로 등록이 되게 된다. 결국 함수 결과값(return)은 없으므로 undefined가 암묵적으로 반환된다.
+
+
+</details>
+
+
+
 
