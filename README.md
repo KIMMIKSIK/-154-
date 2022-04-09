@@ -415,5 +415,110 @@ A
 </details>
 
 
+### **13. What are the three phases of event propagation?(이벤트 개념정리 문제)**
+
+- A: Target > Capturing > Bubbling
+- B: Bubbling > Target > Capturing
+- C: Target > Bubbling > Capturing
+- D: Capturing > Target > Bubbling
+
+
+<details markdown="1">
+<summary>Answer</summary>
+D
+
+표준 [DOM 이벤트](http://www.w3.org/TR/DOM-Level-3-Events/)에서 정의한 이벤트 흐름엔 3가지 단계가 있습니다.
+
+1. 캡처링 단계 – 이벤트가 하위 요소로 전파되는 단계
+2. 타깃 단계 – 이벤트가 실제 타깃 요소에 전달되는 단계
+3. 버블링 단계 – 이벤트가 상위 요소로 전파되는 단계
+
+## **Bubbling**:
+
+한 요소에 이벤트가 발생하면, 이 요소에 할당된 핸들러가 동작하고, 이어서 부모 요소의 핸들러가 동작합니다. 가장 최상단의 조상 요소를 만날 때까지 이 과정이 반복되면서 요소 각각에 할당된 핸들러가 동작합니다. 마치 거품이 올라가는 것 같다 해서 버블링이 라고 부른다.
+대부분의 이벤트는 거의 기본으로 버블링 되지만 focus이벤트와 같이 안되는 이벤트도 있습니다.
+
+한마디로 정리-**하위에서 상위 요소로의 이벤트 전파방식을 이벤트 버블링이라 한다.**
+
+ex)
+
+<form onclick="alert('form')">FORM     //form창 1개가 나옴
+<div onclick="alert('div')">DIV               //div나오고 form창 2개가 나옴
+<p onclick="alert('p')">P</p>                //p나오고 div나오고 form창 3개가 나옴
+</div>
+</form>
+
+![image](https://user-images.githubusercontent.com/98815511/162578949-d28f155f-76e6-4751-82ba-8ec603d093d4.png)
+
+@ 만약 bubbling을 중단하고 싶다면 중단을 원하는 요소의 onclick에 이벤트 객체의 메소드인 **stopPropagation()**메소드를 사용한다.
+
+<body onclick="alert(`버블링은 여기까지 도달하지 못합니다.`)">
+<button onclick="event.stopPropagation()">클릭해 주세요.</button>
+</body>
+
+@ 추가로 한 요소에 여러 핸들러가 있다면 **event.stopImmediatePropagation()**을 통해 가능합니다.이 메서드를 사용하면 해당 포함되있는 해당 함수만 작동하고 요소에 할당된 다른 이벤트의 처리는  모두 동작하지 않습니다.
+**버블링도 막고 해당 요소의 다른 핸들러도 모두 멈추게 합니다.(본인을 포함한 함수는 작동함)
+@** 2개 모두 Capturing에도 적용됨.
+
+## **Capturing**:
+
+이벤트 버블링과 반대 방향으로 진행되는 이벤트 전파 방식
+
+`on<event>` 프로퍼티나 HTML 속성, `addEventListener(event, handler)`를 이용해 할당된 핸들러는 캡처링에 대해 **전혀 알 수 없습니다.** 이 핸들러들은 타깃 단계와 버블링 단계만 동작합니다.
+만약 캡처링 단계에서 이벤트를 잡아내려면 `addEventListener`의 `capture` 옵션을 `true`로 설정해야 합니다.
+
+```
+div.addEventListener("click", logEvent, {
+    capture: true // default 값은 false입니다.
+  });
+```
+
+이렇게 addEventListener인수로 true 혹은 capture:true를 입력해준다.
+
+‣
+
+- `event.target` – 이벤트가 발생한 가장 안쪽의 요소(정확히 어디서 이벤트가 발생했는지)
+- `event.currentTarget` (=`this`) – 이벤트를 핸들링 하는 현재 요소 (핸들러가 실제 할당된 요소)
+- `event.eventPhase` – 현재 이벤트 흐름 단계(캡처링=1, 타깃=2, 버블링=3)
+
+## **@ event.currentTarget vs event.target**
+
+만약 부모에만 이벤트가 있고 자식에게 없는 상황일때,
+
+**currentTarget은 이벤트 핸들러가 부착된 부모를** 가리킨다!
+
+즉, target은 부모로부터 이벤트가 위임되어 발생하는 자식의 위치, 내가 클릭한 자식 요소를 반환한다. 하지만 currentTarget은 이벤트가 부착된 부모의 위치를 반환한다.
+
+
+![image](https://user-images.githubusercontent.com/98815511/162578929-3ed9da2e-8097-47fa-8475-072cd48394e9.png)
+
+event.target은 자식 요소인 span을 리턴하고, event.currentTarget은 부모 요소인 button을 반환하게 된다.
+
+전체내용 참조: [https://ko.javascript.info/bubbling-and-capturing](https://ko.javascript.info/bubbling-and-capturing)
+
+</details>
+
+
+
+
+**14. All object have prototypes.**
+
+- A: true
+- B: false
+
+
+<details markdown="1">
+<summary>Answer</summary>
+B
+
+
+**자바스크립트의 prototype 객체는 정확히는 함수의 프로퍼티 입니다.**  더 정확히 한다면 caller와 constructor내부슬롯을 가지고 생성되는 함수들에게 암묵적으로 생성되는 프로퍼티 입니다.
+****모든 객체들은 __**proto**__ 접근자 프로퍼티를 가지고 있고 그것을 통해 자신의 상위 객체의 프로토타입 객체에 접근할 수 있습니다. 이것을 프로토타입 체인이라고 하며 객체의 최상위에는 결국 object.prototype객체가 존재하고 있습니다.
+
+@ **prototype을 가지고 있지 않은 함수에는 메소드 축약표현과 화살표 함수가 있습니다.**
+
+
+</details>
+
 
 
