@@ -548,4 +548,29 @@ C
 
 
 
+**16. What's the output?**
+
+```
+let number = 0;
+console.log(number++);
+console.log(++number);
+console.log(number);
+```
+
+- A: `1` `1` `2`
+- B: `1` `2` `2`
+- C: `0` `2` `2`
+- D: `0` `1` `2`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+이 문제는 **후치증가 연산자와 전치증가 연산자**의 개념을 물어보고 있습니다. 후치의 ++의 경우 출력후 연산이 이루어지게 되고 전치의 경우 연산 후 값을 출력하게 되어 답은 0 2 2가 됩니다.
+
+</details>
+
+
 
