@@ -574,3 +574,41 @@ C
 
 
 
+**17. What's the output?**
+
+```
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const person = 'Lydia';
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`;
+```
+
+- A: `"Lydia"` `21` `["", " is ", " years old"]`
+- B: `["", " is ", " years old"]` `"Lydia"` `21`
+- C: `"Lydia"` `["", " is ", " years old"]` `21`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+
+자바스크립트의 **함수호출 방법에는 백틱을 사용한 (Tagged Template Literal)방법이 존재한다.**
+
+첫번째 인자는 표현식을 제외한 스트링값의 배열, 두번째 인자는 표현식들이 쓰인만큼 나열
+즉 아래 예시의 두 함수호출은 같은 결과를 반환한다.
+
+ex) 
+
+getPersonInfo``${person}is ${age} years old``;
+getPersonInfo(["", " is ", " years old"], name, age)
+
+같다!
+
+</details>
