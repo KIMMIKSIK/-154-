@@ -612,3 +612,40 @@ getPersonInfo(["", " is ", " years old"], name, age)
 같다!
 
 </details>
+
+
+
+**18. What's the output?**
+
+```
+function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log('You are an adult!');
+  } else if (data == { age: 18 }) {
+    console.log('You are still an adult.');
+  } else {
+    console.log(`Hmm.. You don't have an age I guess`);
+  }
+}
+
+checkAge({ age: 18 });
+```
+
+- A: `You are an adult!`
+- B: `You are still an adult.`
+- C: `Hmm.. You don't have an age I guess`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+**이 문제는 원시타입과 객체 타입의 값을 참조하고 있는 형태를 알아야 이해할 수 있다.**
+
+원시타입의 경우 바로 값이 들어있는 주소를 참조하고 있지만 객체타입의 경우는 객체 값이 들어있는 주소의 주소를 한단계 더 걸쳐 참조하고 있기 때문에 결국 객체 == 객체 혹은 객체 ===객체는 바로 값을 비교하는게 아니라 참조값(주소)를 비교하고 있다는 말이된다!
+
+</details>
+
+
+
