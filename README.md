@@ -648,4 +648,30 @@ C
 </details>
 
 
+**19. What's the output?**
+
+```
+function getAge(...args) {
+  console.log(typeof args);
+}
+
+getAge(21);
+```
+
+- A: `"number"`
+- B: `"array"`
+- C: `"object"`
+- D: `"NaN"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+**...args와 같은 것을 스프레드 연산자**라고 한다. 위와 같은 경우 매개변수로 ...args를 지정하면 인수로 들어가는 모든 값을 args라는 식별자의 배열로 저장하게 된다. 배열의 데이터 타입은 객체이므로 답은 object이다.
+
+</details>
+
+
 
