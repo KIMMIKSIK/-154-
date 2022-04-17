@@ -674,4 +674,44 @@ C
 </details>
 
 
+**20. What's the output?**
+
+```
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+
+getAge();
+```
+
+- A: `21`
+- B: `undefined`
+- C: `ReferenceError`
+- D: `TypeError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+이 문제는 **자바스크립트의 strict mode**의 개념을 알아야 한다. 오타나 문법의 지식의 미비로 인한 실수는 언제든 발생할 수 있다. 이 모드는 오류를 줄여 안정적인 코드를 생산하기 위한 해결책이라고 할 수 있다. 예를 들어 아래와 같은 경우가 있다.
+
+function foo(){
+
+x=10;
+
+}
+
+foo();
+
+console.log(x);  // 자바스크립트는 이때 10이라고 하는 결과를 도출한다.
+이유는 함수안에 x식별자가 없어 전역인 상위스코프를 확인하게 되고 전역에도 존재하지 않는 x는 자바스크립트가 암묵적으로 전역객체의 프로퍼티로 생성하기 때문이다. 따라서 마치 전역에 선언한 변수처럼 접근이 가능하게 된다. 이는 의도치 않은 결과이므로 이러한 오류들을 줄이기 위해서 strict mode를 사용한다. strict mode는 전역의 선두 또는 함수몸체의 선두에 ‘use strict’를 추가하여 사용한다. ESLint같은 도구를 사용해도 이와 유사하며 더 나은 효과를 얻을 수 있다는 것을 참조하자.
+
+</details>
+
+
+
 
