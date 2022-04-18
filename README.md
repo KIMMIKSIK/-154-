@@ -714,4 +714,24 @@ console.log(x);  // 자바스크립트는 이때 10이라고 하는 결과를 �
 
 
 
+**21. What's the value of `sum`?**
+
+`const sum = eval('10*10+5');`
+
+- A: `105`
+- B: `"105"`
+- C: `TypeError`
+- D: `"10*10+5"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+
+eval함수는 문자열을 인자로 받아서 실행하는 함수이다. 다만 만약 표현식이 사용되었다면 표현식을 평가한 결과를 반환하게 되는데 그래서 답은 숫자 105가 된다.
+
+</details>
+
+
 
