@@ -263,8 +263,8 @@ class Chameleon {
   }
 }
 
-//{ newColor = 'green' } = {} 이렇게하면 기본값이 들어있는 형태가됨
-//그냥 인수에 기본값 넣어준것을 객체로 표현했다고 보면 된다. ex) a=3 이런식으로 인수준 느낌
+//{ newColor = 'green' } = {} 에서 = {} 이렇게 추가하면 인수로 아무것도 안넘겨주어도 된다는 의미이다.
+//{ newColor = 'green' }의 경우 그냥 매개변수에 기본값(초기값)을 넣어준 것이며 그것을 객체로 표현했다고 보면 된다. ex)constructor(a=3) 이런식으로 인수 준 느낌
 const freddie = new Chameleon({ newColor: 'purple' });
 console.log(freddie.colorChange('orange'));
 ```
