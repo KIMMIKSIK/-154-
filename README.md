@@ -769,3 +769,27 @@ B
 
 
 
+### **23. What's the output?**
+
+`var num = 8;
+var num = 10;
+
+console.log(num);`
+
+- A: `8`
+- B: `10`
+- C: `SyntaxError`
+- D: `ReferenceError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+
+var 키워드로 변수를 생성한다면 크게 3가지 문제를 겪을 수 있다. 첫쨰는 **중복 선언이 가능**하여 전에 선언된 변수가 있다면 덮어쓰게 된다는 것이고 둘째는 오직 **함수레벨스코프**만 따른다는 것이다. 셋쨰는 호이스팅을 통해 **변수의 선언과 초기화가 동시**에 이루어 지는 것인데 이 문제의 경우 첫번째 이유로 인해 답은 B가 된다.
+
+
+</details>
+
+
