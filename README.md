@@ -793,3 +793,38 @@ var 키워드로 변수를 생성한다면 크게 3가지 문제를 겪을 수 �
 </details>
 
 
+
+### **24. What's the output?**
+
+`const obj = { 1: 'a', 2: 'b', 3: 'c' };
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty('1');
+obj.hasOwnProperty(1);
+set.has('1');
+set.has(1);`
+
+- A: `false` `true` `false` `true`
+- B: `false` `true` `true` `true`
+- C: `true` `true` `false` `true`
+- D: `true` `true` `true` `true`
+- 
+
+<details markdown="1">
+<summary>Answer</summary>
+
+
+C
+
+ES6의 새로운 자료구조에는 Map과 Set이 존재한다. 둘다 생성자 함수로서 객체를 생성하지만 Map의 경우 키가 있는 데이터를 저장한다는 점에서 객체와 유사하고 Set은 키가 없는 값을 저장한다는 점에서 배열과 유사하다. 둘다 순서를 기억하는 이터러블 객체를 생성하여 반복문을 사용할 수 있다. 특히 이번 문제의 Set의 경우 중복을 허용하지 않는 객체를 생성한다.(파이썬의 집합)
+
+ 일반적인 객체의 키 값은 직접 문자열로 입력하지 않아도 내부적으로 문자열입니다. 따라서 “1”도 가능하며 1도 가능합니다. 하지만 set의 경우 인수로 준 이터러블 객체의  요소를 그대로 가져오므로 객체 set에 들어있는 1은 문자열 “1”이 아니다. 
+
+참조 : [https://mine-it-record.tistory.com/473](https://mine-it-record.tistory.com/473)
+
+</details>
+
+
+
+
+
