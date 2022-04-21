@@ -808,7 +808,7 @@ set.has(1);`
 - B: `false` `true` `true` `true`
 - C: `true` `true` `false` `true`
 - D: `true` `true` `true` `true`
-- 
+
 
 <details markdown="1">
 <summary>Answer</summary>
