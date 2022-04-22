@@ -819,3 +819,26 @@ ES6의 새로운 자료구조에는 Map과 Set이 존재한다. 둘다 생성자
 참조 : [https://mine-it-record.tistory.com/473](https://mine-it-record.tistory.com/473)
 
 </details>
+
+
+### **25. What's the output?**
+
+`const obj = { a: 'one', b: 'two', a: 'three' };
+console.log(obj);`
+
+- A: `{ a: "one", b: "two" }`
+- B: `{ b: "two", a: "three" }`
+- C: `{ a: "three", b: "two" }`
+- D: `SyntaxError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+만약 객체에 같은 키 이름으로 두개의 값이 들어가게 된다면 처음에 입력된 순서에 있지만 값은 최신것으로 바뀌게 된다. 재할당의 느낌
+
+</details>
+
+
