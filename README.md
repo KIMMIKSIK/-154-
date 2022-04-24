@@ -848,3 +848,24 @@ C
 만약 객체에 같은 키 이름으로 두개의 값이 들어가게 된다면 처음에 입력된 순서에 있지만 값은 최신것으로 바뀌게 된다. 재할당의 느낌
 
 </details>
+
+
+
+### **26. The JavaScript global execution context creates two things for you: the global object, and the "this" keyword.**
+
+- A: true
+- B: false
+- C: it depends
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+자바스크립트의 전역 실행컨텍스트는 전역객체와 this키워드를 생성한다는 것이 문제의 질문인데 사실 내 개인적인 생각은 false인 것 같다. 왜냐하면 전역객체는 사실 전역컨텍스트에 의해 생성되는 것이 아닌 가장 프로그램 실행시 가장 먼저 실행되게 되고 전역컨텍스트가 이 전역객체를 참조하게 되는 것이기 때문이다. this키워드를 생성하여 바인딩하는 것은 맞다.
+
+</details>
+
+
+
+
