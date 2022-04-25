@@ -868,4 +868,27 @@ A
 
 
 
+### **27. What's the output?**
+
+```jsx
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+```
+
+- A: `1` `2`
+- B: `1` `2` `3`
+- C: `1` `2` `4`
+- D: `1` `3` `4`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+continue키워드는 반복문에서 내용을 건너뛰고 다음 반복을 진행하라는 의미이다. 따라서 위와 같은 경우 i가 3이 되었을 때는 console.log(i)를 거치지 않고 다음으로 넘어가게 된다.
+
+</details>
 
