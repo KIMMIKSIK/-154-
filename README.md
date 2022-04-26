@@ -892,3 +892,38 @@ continue키워드는 반복문에서 내용을 건너뛰고 다음 반복을 진
 
 </details>
 
+
+
+
+### **28. What's the output?**
+
+```jsx
+String.prototype.giveLydiaPizza = () => {
+  return 'Just give Lydia pizza already!';
+};
+
+const name = 'Lydia';
+
+name.giveLydiaPizza();
+```
+
+- A: `"Just give Lydia pizza already!"`
+- B: `TypeError: not a function`
+- C: `SyntaxError`
+- D: `undefined`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+String은 자바스크립트의 빌트인 객체로서 생성자 함수이다. 이 문제에서는 **래퍼객체의 개념과 프로토타입의 개념**을 물어보고 있다. 자바스크립트는 원시타입의 name 식별자를 객체처럼 사용할 때 문자열의 타입을 암묵적으로 객체로 변환시킨다.
+
+(new String("hello")을 호출한 것처럼 string 자료형을 래퍼 객체로 임시로 변환하기 때문입니다.) 
+
+이렇게 객체형태로 원시타입의 값을 감싸게 된 것을 래퍼객체라고 하며 이때 문자열은 프로토타입 체인을 따라 자신이 상속받는 프로퍼티나 메소드를 사용할 수 있게 된다.
+
+- 원시타입에 대응하는 4개의 래퍼객체: String, Number, Boolean, Symbol
+
+</details>
+
