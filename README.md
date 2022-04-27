@@ -927,3 +927,35 @@ String은 자바스크립트의 빌트인 객체로서 생성자 함수이다. �
 
 </details>
 
+
+
+### **29. What's the output?**
+
+```jsx
+const a = {};
+const b = { key: 'b' };
+const c = { key: 'c' };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+```
+
+- A: `123`
+- B: `456`
+- C: `undefined`
+- D: `ReferenceError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+객체의 키값으로 등록되는 것들은 모두 암묵적으로 문자열 화가 된다. 만약 그것이 객체라면 “[object Object]”형태의 문자열이 되는데 이때 B,C모두 같은 문자열 키 “[object Object]”의 형태이기 때문에 객체 c를 키로서 전해줄때 프로퍼티키 “[object Object]”의 값이 123에서 456으로 재할당되는 것이다.
+즉 b,c 둘다 “[object Object]”를 의미하며 결국 a[b]는  a[“[object Object]”]를 의미하는 것이다.
+
+
+</details>
+
+
