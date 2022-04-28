@@ -959,3 +959,30 @@ B
 </details>
 
 
+### **30. What's the output?**
+
+```jsx
+const foo = () => console.log('First');
+const bar = () => setTimeout(() => console.log('Second'));
+const baz = () => console.log('Third');
+
+bar();
+foo();
+baz();
+```
+
+- A: `First` `Second` `Third`
+- B: `First` `Third` `Second`
+- C: `Second` `First` `Third`
+- D: `Second` `Third` `First`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+
+문제는 비동기 작동의 메커니즘을 물어보고 있다. setTimeout은 인수로 전달된 콜백학수를 지연시간후에 작동시키는 함수이다. 설령 위처럼 지연시간이 정해져 있지 않아도 setTimeout()을 호출함과 동시에 일단 bar함수는 stack에서 pop되기 때문에 다른 함수들이 먼저 실행되고 마지막에 ‘second’를 호출하는 콜백함수를 작동시킨다. 아래 그림을 참조하며 실제로 delay로 주어지는 시간은 정확히 말하면 wep api인 setTimeout()이 테스크큐로 함수를 인풋하기까지 걸리는 delay를 말한다.  출력되기 까지의 시간이 아니라는 것이다. 큐에 등록된 함수는 이벤트루프를 통해서 stack이 비게 된다면 그때 stack으로 push되어 비로소 호출된다.
+
+</details>
