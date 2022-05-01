@@ -1078,3 +1078,28 @@ bind,call,apply는 모두 함수에 this를 고정시켜줄때 사용할수 있�
 </details>
 
 
+### **34. What's the output?**
+
+```jsx
+function sayHi() {
+  return (() => 0)();
+}
+
+console.log(typeof sayHi());
+```
+
+- A: `"object"`
+- B: `"number"`
+- C: `"function"`
+- D: `"undefined"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+이 문제는 sayHi()를 통해 함수의 리턴값을 물어보고 있다. 함수의 리턴 값은 화살표함수의 즉시 실행함수로 이루어져있고 그 결과인 0이라는 숫자값이 나오게 되는데 결국 typeof가 가리키는 대상은 숫자형 0이다.
+
+</details>
+
+
