@@ -1041,3 +1041,40 @@ A
 이벤트는 크게 캡쳐링 타겟 버블링으로 나누어진다. 그 중 addEventlistener를 통해 3번째 인수를 true로 전달하는 경우가 아니라면 기본적으로 캡쳐링은 일어나지 않는다. 즉 클릭한 타겟과 버블링 현상이 나타나고 그로인해 p div가 출력된다.
 
 </details>
+
+
+### **33. What's the output?**
+
+```jsx
+const person = { name: 'Lydia' };
+
+function sayHi(age) {
+  return `${this.name} is ${age}`;
+}
+
+console.log(sayHi.call(person, 21));
+console.log(sayHi.bind(person, 21));
+```
+
+- A: `undefined is 21` `Lydia is 21`
+- B: `function` `function`
+- C: `Lydia is 21` `Lydia is 21`
+- D: `Lydia is 21` `function`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+D
+
+
+bind,call,apply는 모두 함수에 this를 고정시켜줄때 사용할수 있는 메소드들이다. bind는 인자로 (this가 될 객체, ...함수에실제인수로 들어갈 표현식)으로 사용할 수 있으며 call, apply와 다르게 함수 실행 결과가 아니라 binding이 끝난 bound 함수를 다시 리턴한다. call과 apply는 첫번째 인자로 this바인딩을 위한 객체를 넣고 두번째부터는 함수에 실제 인수로 들어갈 표현식이 들어간다. 결국 binding과 똑같다. 하지만 call과 apply의 경우 함수를 실행한 값을 리턴한다. 또한 say.apply의 두번째 인수는 모두 배열로 넣어줘야한다는 차이가 있다.(call과 apply의 차이)
+
+- say.apply(obj, [”seoul”])
+- say.call(obj, "seoul")
+- student1.print.apply(this, ['male', 'A']); - 실행결과 반환
+- var print = student1.print.bind(this, 'female','O'); - binding시킨 student1.print함수 반환
+
+
+</details>
+
+
