@@ -1018,3 +1018,26 @@ C
 
 
 
+### **32. When you click the paragraph, what's the logged output?**
+
+```jsx
+<div onclick="console.log('div')">
+  <p onclick="console.log('p')">
+    Click here!
+  </p>
+</div>
+```
+
+- A: `p` `div`
+- B: `div` `p`
+- C: `p`
+- D: `div`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+이벤트는 크게 캡쳐링 타겟 버블링으로 나누어진다. 그 중 addEventlistener를 통해 3번째 인수를 true로 전달하는 경우가 아니라면 기본적으로 캡쳐링은 일어나지 않는다. 즉 클릭한 타겟과 버블링 현상이 나타나고 그로인해 p div가 출력된다.
+
+</details>
