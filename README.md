@@ -1119,8 +1119,7 @@ undefined;
 - A: `0`, `''`, `undefined`
 - B: `0`, `new Number(0)`, `''`, `new Boolean(false)`, `undefined`
 - C: `0`, `''`, `new Boolean(false)`, `undefined`
-- D: All of them are falsy
-- 
+- D: All of them are falsy 
 
 <details markdown="1">
 <summary>Answer</summary>
