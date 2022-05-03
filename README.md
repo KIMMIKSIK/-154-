@@ -1120,24 +1120,30 @@ undefined;
 - B: `0`, `new Number(0)`, `''`, `new Boolean(false)`, `undefined`
 - C: `0`, `''`, `new Boolean(false)`, `undefined`
 - D: All of them are falsy
-
+- 
 
 <details markdown="1">
 <summary>Answer</summary>
 
 A
 
-
 아래는 8가지의 falsy를 의미하는 형태이다.(생성자함수로 만들어진 객체는 truthy이다.)
 
-undefined
-null
-NaN
-false
-'' (empty string)
-0
--0
-0n (BigInt(0))
+`undefined`
+
+`null`
+
+`NaN`
+
+`false`
+
+`''` (empty string)
+
+`0`
+
+-`0`
+
+`0n` (BigInt(0))
 
 </details>
 
