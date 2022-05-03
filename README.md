@@ -1149,3 +1149,26 @@ A
 
 
 
+### **36. What's the output?**
+
+```jsx
+console.log(typeof typeof 1);
+```
+
+- A: `"number"`
+- B: `"string"`
+- C: `"object"`
+- D: `"undefined"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+첫번쨰 typeof는 “number”를 출력하며 두번째 typeof를 통해 “number”의 타입 string을 출력한다.
+
+</details>
+
+
+
+
