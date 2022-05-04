@@ -1170,5 +1170,27 @@ B
 </details>
 
 
+### **37. What's the output?**
+
+```jsx
+const numbers = [1, 2, 3];
+numbers[10] = 11;
+console.log(numbers);
+```
+
+- A: `[1, 2, 3, 7 x null, 11]`
+- B: `[1, 2, 3, 11]`
+- C: `[1, 2, 3, 7 x empty, 11]`
+- D: `SyntaxError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+문제와 같이 배열에 특정 인덱스에 값을 추가하면 그 크기만큼 배열이 확장되고 그 사이에는 undefined형태의 값이 할당된다.
+
+</details>
+
 
 
