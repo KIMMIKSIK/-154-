@@ -1194,3 +1194,35 @@ C
 
 
 
+### **38. What's the output?**
+
+```jsx
+(() => {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+})();
+```
+
+- A: `1` `undefined` `2`
+- B: `undefined` `undefined` `undefined`
+- C: `1` `1` `2`
+- D: `1` `undefined` `undefined`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+화살표함수 내부에서 x,y를 선언한 상태에서 두값은 모두 undefined상태이다. 이때 catch의 인수로 전달된 x는 try문에서 전달한 에러를 나타낸다. 즉 catch블록 안에서 별개의 x변수이다. x를 1로 **식별자 결정**에 의해 catch문안에 x에 1이 할당되고 y는 화살표함수에서 생성된 y를 의미하며 2를 할당하게 된다. 결국 catch문 내부 x는 1이 되고 블록 밖으로 나가면 화살표함수내에 x는 그래도 undefined상태이다. y는 catch문 안에서 2로 할당되면서 2를 출력하게 된다.
+
+</details>
+
+
+
