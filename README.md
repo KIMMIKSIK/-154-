@@ -1226,3 +1226,26 @@ A
 
 
 
+### **39. Everything in JavaScript is either a...**
+
+- A: primitive or object
+- B: function or object
+- C: trick question! only objects
+- D: number or object
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+자바스크립트는 기본 원시타입과 객체 타입만이 존재한다. 둘의 차이점은 원시타입이 속성이나 메서드가 없다는 것인데 원시타입의 값은 래퍼 객체의 형태로 사용되는 방법도 존재한다. 하지만 기본적으로 자바스크립트에는 원시타입(기본형), 객체타입 2가지가 존재한다.
+
+- 원시타입에 대응하는 4개의 래퍼객체: String, Number, Boolean, Symbol
+
+(null,undefined제외 나머지)
+
+
+</details>
+
+
+
