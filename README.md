@@ -1283,7 +1283,9 @@ C
 
 ex) [0, 1, 2, 3, 4].reduce( (prev, curr) => prev + curr ,10(초기값!!!!));
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c957660-dbe3-4a14-910a-1d7f7d311871/Untitled.png)
+
+![image](https://user-images.githubusercontent.com/98815511/167278806-35bc406e-d581-4de6-8946-e915e8d3a260.png)
+
 
 </details>
 
