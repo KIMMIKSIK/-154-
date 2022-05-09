@@ -1291,5 +1291,34 @@ ex) [0, 1, 2, 3, 4].reduce( (prev, curr) => prev + curr ,10(초기값!!!!));
 
 
 
+### **41. What's the output?**
+
+```jsx
+!!null;
+!!'';
+!!1;
+```
+
+- A: `false` `true` `false`
+- B: `false` `false` `true`
+- C: `false` `true` `true`
+- D: `true` `true` `false`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+
+B
+
+부정의 부정 의미를 잘 파악해야한다. false의 부정의 부정은 다시 false이며 true의 부정의 부정 또한 다시 true이다.
+
+</details>
+
+
+
+
+
+
+
 
 
