@@ -1316,6 +1316,26 @@ B
 
 
 
+### **42. What does the `setInterval` method return in the browser?**
+
+```jsx
+setInterval(() => console.log('Hi'), 1000);
+```
+
+- A: a unique id
+- B: the amount of milliseconds specified
+- C: the passed function
+- D: `undefined`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+setInterval함수는 그 반환값으로 유니크한 고유값을 반환하고 그것을 clearInterval(고유값)이렇게 전달하면 setInterval함수를 종료시킬 수 있다.
+
+</details>
+
 
 
 
