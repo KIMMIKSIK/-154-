@@ -1361,3 +1361,36 @@ A
 </details>
 
 
+
+### **44. What's the output?**
+
+```jsx
+function* generator(i) {
+  yield i;
+  yield i * 2;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+```
+
+- A: `[0, 10], [10, 20]`
+- B: `20, 20`
+- C: `10, 20`
+- D: `0, 10 and 10, 20`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+제너레이터는 **코드블록의 실행을 일시 중지했다가 필요한 시점에 재개**할 수 있는 특수한 함수이다. 제너레이터 함수는 **제너레이터 객체**를 반환하고 그 객체는 이터레이터로서 순환을 위한 **next메소드**를 갖게 된다. 그리고 그 next는 메소드는 다시{value: , done:}의 프로퍼티를 가지는 **이터레이트 리절트 객체**를 생성한다. 포인트는 제너레이터는 1개 이상의 yield 키워드를 가진
+표현식을 가지게 되며 next메소드를 통해 yield 키워드를 기준으로 이동하고 다음 yield키워드에 멈추면서 그떄마다 각 상태의 {value: , done:} 프로퍼티를 가지는 이터레이트 리절트 객체를 생성한다. 모든 yield가 다 끝나면 일반함수처럼 작동하면서 return값을 반환한다. (return 이 없으면 일반함수와 같이 undefined 반환)
+
+
+</details>
+
+
