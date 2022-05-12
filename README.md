@@ -1338,7 +1338,26 @@ setInterval함수는 그 반환값으로 유니크한 고유값을 반환하고 
 
 
 
+### **43. What does this return?**
+
+```jsx
+[...'Lydia'];
+```
+
+- A: `["L", "y", "d", "i", "a"]`
+- B: `["Lydia"]`
+- C: `[[], "Lydia"]`
+- D: `[["L", "y", "d", "i", "a"]]`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
 
 
+문자열은 유사배열객체로 사용가능 하며 스프레드 연산자를 통해 이터러블한 각각의 요소를 다룰수 있다.
+
+
+</details>
 
 
