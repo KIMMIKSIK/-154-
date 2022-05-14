@@ -1394,3 +1394,37 @@ C
 </details>
 
 
+
+
+**45. What does this return?**
+
+```jsx
+const firstPromise = new Promise((res, rej) => {
+  setTimeout(res, 500, 'one');
+});
+
+const secondPromise = new Promise((res, rej) => {
+  setTimeout(res, 100, 'two');
+});
+
+Promise.race([firstPromise, seco ndPromise]).then(res => console.log(res));
+```
+
+- A: `"one"`
+- B: `"two"`
+- C: `"two" "one"`
+- D: `"one" "two"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+
+B
+
+Promise.race는 가장먼저 fulfilled 상태가 되어 결과를 반환하는 새로운 프로미스만을 반환하는 함수이다. 보기 처럼 인자는 배열 등의 이터러블을 인수로 전달받는다.
+
+</details>
+
+
+
+
