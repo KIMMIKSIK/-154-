@@ -1428,3 +1428,31 @@ Promise.race는 가장먼저 fulfilled 상태가 되어 결과를 반환하는 �
 
 
 
+### **46. What's the output?**
+
+```jsx
+let person = { name: 'Lydia' };
+const members = [person];
+person = null;
+
+console.log(members);
+```
+
+- A: `null`
+- B: `[null]`
+- C: `[{}]`
+- D: `[{ name: "Lydia" }]`
+
+>Answer: D
+
+ 이번 문제는 값의 복사,전달의 개념을 이해해야한다. 우선 **객체타입의 값은 참조값을 복사해서 전달한다**. 즉 실제 값이 아닌 주소값을 복사해서 전달하게 되고 이를 받은 변수 member 배열의 첫번쨰 요소로 이 주소가 등록된다. 이후 만약 같은 주소의 객체 요소(프로퍼티)를 교체했다면 person과 member배열의 첫번째 요소의 값은 같은 상태를 유지하면서 변경될 것이다. 왜냐하면 참조하고 있는 주소값이 같기 때문이다. **하지만 문제에서는 아예 person변수의 들어가는 값(주소) 자체를 변경했다.**
+**객체타입이 가변하다는 것은 그 프로퍼티 요소를 바꾸었을 때만 성립**되는 것이고 아예 다른 값을 다시 할당하면 메모리공간에 새로운 값을 생성한뒤 그 주소를 참조하게 된다. 따라서 배열의 요소는 변화가 없는것이다.
+
+![image](https://user-images.githubusercontent.com/98815511/169702617-ea2c1aef-c513-41b5-97a2-8307ea86cd62.png)
+
+
+
+
+
+
+
