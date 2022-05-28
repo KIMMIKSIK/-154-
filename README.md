@@ -1458,6 +1458,22 @@ D
 
 
 
+47. What's the output?
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+for (const item in person) {
+  console.log(item);
+}
+A: { name: "Lydia" }, { age: 21 }
+B: "name", "age"
+C: "Lydia", 21
+D: ["name", "Lydia"], ["age", 21]
+
+
+
 
 
 
