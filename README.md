@@ -1472,7 +1472,26 @@ B: "name", "age"
 C: "Lydia", 21
 D: ["name", "Lydia"], ["age", 21]
 
+<details markdown="1">
+<summary>Answer</summary>
 
+B
+
+```
+for~of(배열에 사용 값을 도출)
+✔️ 반복 가능한 객체(iterable)를 순회할 수 있도록 해줌
+✔️ Array, Map, Set, arguments 등이 해당됨 (Object는 해당 X)
+참고로 객체의 값은 이터러블이지만 열거가능한 속성은 아님.
+```
+
+```
+for ~ in
+✔️ 객체의 열거 가능한 '속성들'을 순회할 수 있도록 해줌
+✔️ 객체의 key값에 접근 가능, value값에는 직접 접근 불가
+✔️ 모든 객체에서 사용 가능
+```
+
+</details>
 
 
 
