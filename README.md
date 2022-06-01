@@ -1458,7 +1458,9 @@ D
 
 
 
-47. What's the output?
+### **47. What's the output?**
+
+```jsx
 const person = {
   name: 'Lydia',
   age: 21,
@@ -1467,10 +1469,12 @@ const person = {
 for (const item in person) {
   console.log(item);
 }
-A: { name: "Lydia" }, { age: 21 }
-B: "name", "age"
-C: "Lydia", 21
-D: ["name", "Lydia"], ["age", 21]
+```
+
+- A: `{ name: "Lydia" }, { age: 21 }`
+- B: `"name", "age"`
+- C: `"Lydia", 21`
+- D: `["name", "Lydia"], ["age", 21]`
 
 <details markdown="1">
 <summary>Answer</summary>
