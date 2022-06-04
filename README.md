@@ -1521,5 +1521,27 @@ B
 
 
 
+### **49. What's the value of `num`?**
 
+```jsx
+const num = parseInt('7*6', 10);
+```
+
+- A: `42`
+- B: `"42"`
+- C: `7`
+- D: `NaN`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+**parseInt는 string을 정수로 변환한 값을 리턴하는 함수입니다**. 인자는 2개를 가지며(string,radix)
+radix에는 2~36의 진법체계가 들어가게 된다. 결과는 모두 10진수로 해석되며 이문제의 경우 10진수로 해석하여 10진수로 결과를 보여준다. 단 **소수는 소수점을 자르고 정수로 표현**되며 **정수로 표현될 수 없는 문자열 값을 만나게 되면 이후는 생략**한다. 이번 문제는 "*"를 만나면서 정수 변환이 불가하여 7까지만 해석한 것이다. 만약 첫글자부터 정수로 변경할 수 없다면 NaN값을 리턴한다.(단 공백은 첫글자로 들어와도 무시되고 다음을 해석할 수 있다.)
+
+- 참조 : [https://hianna.tistory.com/386](https://hianna.tistory.com/386)
+</details>
 
