@@ -1545,3 +1545,33 @@ radix에는 2~36의 진법체계가 들어가게 된다. 결과는 모두 10진�
 - 참조 : [https://hianna.tistory.com/386](https://hianna.tistory.com/386)
 </details>
 
+
+
+
+### **50. What's the output?**
+
+```jsx
+[1, 2, 3].map(num => {
+  if (typeof num === 'number') return;
+  return num * 2;
+});
+```
+
+- A: `[]`
+- B: `[null, null, null]`
+- C: `[undefined, undefined, undefined]`
+- D: `[ 3 x empty ]`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+[1,2,3]이라는 배열을 map으로 순회하면서 새로운 배열을 만드는 것인데 이떄 if 문을 통해 각각의 요소의 타입이 number인지 찾고 있다 만약 number라면 undefined를 리터하는 형태이며 모든요소가 number타입이기 때문에 답은 C가된다.
+
+</details>
+
+
