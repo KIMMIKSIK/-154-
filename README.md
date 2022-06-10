@@ -1573,3 +1573,34 @@ C
 </details>
 
 
+### **51. What's the output?**
+
+```jsx
+function getInfo(member, year) {
+  member.name = 'Lydia';
+  year = '1998';
+}
+
+const person = { name: 'Sarah' };
+const birthYear = '1997';
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear);
+```
+
+- A: `{ name: "Lydia" }, "1997"`
+- B: `{ name: "Sarah" }, "1998"`
+- C: `{ name: "Lydia" }, "1998"`
+- D: `{ name: "Sarah" }, "1997"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+문제에서 person의 경우 객체타입으로 참조값을 저장하고 birthyear의 경우 원시타입으로 값자체를 저장한다. 즉 함수가 실행되고 각각 파라메타로 값을 전달했을때 member는 참조값(주소)을 받고, year는 값자체를 받는다. member.name은 똑같은 객체의 name프로퍼티의 값을 바꾸지만 member자체의 참조값이 바뀌지는 않는다. 하지만 year는 새로운 값으로 완전히 갱신되게 된다. 따라서 답은 A이다.
+
+</details>
+ 
+
