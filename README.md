@@ -1602,5 +1602,82 @@ A
 문제에서 person의 경우 객체타입으로 참조값을 저장하고 birthyear의 경우 원시타입으로 값자체를 저장한다. 즉 함수가 실행되고 각각 파라메타로 값을 전달했을때 member는 참조값(주소)을 받고, year는 값자체를 받는다. member.name은 똑같은 객체의 name프로퍼티의 값을 바꾸지만 member자체의 참조값이 바뀌지는 않는다. 하지만 year는 새로운 값으로 완전히 갱신되게 된다. 따라서 답은 A이다.
 
 </details>
- 
 
+
+### **52. What's the output?**
+
+```jsx
+function greeting() {
+  throw 'Hello world!';
+}
+
+function sayHi() {
+  try {
+    const data = greeting();
+    console.log('It worked!', data);
+  } catch (e) {
+    console.log('Oh no an error:', e);
+  }
+}
+
+sayHi();
+```
+
+- A: `It worked! Hello world!`
+- B: `Oh no an error: undefined`
+- C: `SyntaxError: can only throw Error objects`
+- D: `Oh no an error: Hello world!`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+D
+
+
+자바스크립트의 오류에는 2가지가 있다. 에러와 예외이다.
+
+에러에 경우는 프로그래밍 언어의 문법적인 오류 예를 들면 괄호({[]})를 닫지 않았다거나
+할 때 에러라고 부른다.
+ex)
+
+```jsx
+let a=3;
+
+try{
+
+  console.log(a,b
+}catch(e){
+
+  console.log(e.message)
+}
+// 이 경우 발생한 에러는 예외처리로 처리할 수 없다.
+```
+
+예외에 경우는 프로그램을 실행 중 발생하는 오류를 예외라고 한다.
+
+ex)
+
+```jsx
+let a=3;
+
+try{
+
+  console.log(a,b)
+}catch(e){
+
+  console.log(e.message)
+}
+// b is not defined를 출력한다 이는 변수 b를 선언하지 않았기 때문이다.
+```
+
+예외 : try catch 구문으로 해결할 수 있는 것
+
+에러 : try catch 구문으로 해결할 수 없는 것
+
+- 예외처리는 크게 기본예외처리와 고급예외처리가 있으며 try,catch,finally는 고급예외처리에 해당한다.
+- throw문은 예외를 강제적으로 발생시킬수 있는 키워드이며 표현식값이 뒤에 나올 수 있다. catch문은 예외가 발생하면 실행되고 e라는 지역객체를 받아서 작동할 수 있다.
+- 에러든 오류든 만약 발생한다면 그 지점에서 모든 작동을 중지하고 예외처리를 찾아낸다. 만약 해당 컨텍스트에 없다면 실행 컨텍스트 stack을 따라 함수를 호출한 곳으로 예외를 전파하며 그 과정에서 처리문(catch)을 찾아내면 그곳에서 처리되고 이후 코드는 다시 처리된 후부터 실행된다. 만약 끝까지 처리문을 찾지 못한다면 에러로서 출력되게 된다.
+- 에러는 처리할 수 없다.
+
+
+</details>
