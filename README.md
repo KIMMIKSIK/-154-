@@ -1681,3 +1681,36 @@ try{
 
 
 </details>
+
+
+### **53. What's the output?**
+
+```jsx
+function Car() {
+  this.make = 'Lamborghini';
+  return { make: 'Maserati' };
+}
+
+const myCar = new Car();
+console.log(myCar.make);
+```
+
+- A: `"Lamborghini"`
+- B: `"Maserati"`
+- C: `ReferenceError`
+- D: `TypeError`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B 
+
+생성자 함수는 암묵적으로 새로운 인스턴스를 반환한다. 만약 return이 명시적으로 적혀있어도 원시타입인경우는 무시하지만 그 값이 객체라면 인스턴스가 아닌 객체를 반환하게 된다.
+
+</details>
+
+
+
+
+
