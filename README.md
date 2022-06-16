@@ -1713,4 +1713,20 @@ B
 
 
 
+### **54. What's the output?**
+
+```jsx
+(() => {
+  let x = (y = 10);
+})();
+
+console.log(typeof x);
+console.log(typeof y);
+```
+
+- A: `"undefined", "number"`
+- B: `"number", "number"`
+- C: `"object", "number"`
+- D: `"number", "undefined"`
+
 
