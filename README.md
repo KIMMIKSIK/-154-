@@ -1730,3 +1730,15 @@ console.log(typeof y);
 - D: `"number", "undefined"`
 
 
+<details markdown="1">
+<summary>Answer</summary>
+
+>Answer: A
+
+즉시 실행함수 내부 x는 함수 레벨 스코프인 let으로 선언이 되었고 선언 키워드가 없는 y의 경우 자바스크립트에서는 암묵적 전역으로 전역 객체의 변수로 등록이 된다. 마치 window.y의 느낌으로 등록된다.
+
+
+</details>
+
+
+
