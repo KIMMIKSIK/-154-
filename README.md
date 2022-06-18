@@ -1741,4 +1741,39 @@ console.log(typeof y);
 </details>
 
 
+### **55. What's the output?**
+
+```jsx
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Dog.prototype.bark = function() {
+  console.log(`Woof I am ${this.name}`);
+};
+
+const pet = new Dog('Mara');
+
+pet.bark();
+
+delete Dog.prototype.bark;
+
+pet.bark();
+```
+
+- A: `"Woof I am Mara"`, `TypeError`
+- B: `"Woof I am Mara"`, `"Woof I am Mara"`
+- C: `"Woof I am Mara"`, `undefined`
+- D: `TypeError`, `TypeError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+
+ A
+ 
+</details>
+
 
