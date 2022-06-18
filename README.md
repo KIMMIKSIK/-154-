@@ -1774,6 +1774,8 @@ pet.bark();
 
  A
  
+ delete 키워드는 객체의 속성을 삭제하는 키워드이다. 문제의 경우 bark라는 함수를 삭제하게 되면 더 이상 객체의 프로퍼티로 존재하지 않게 되고 undefined인 상태이다. 이때 함수를 호출하는 ()연산자와 함께 사용하면 TypeError: pet.bark is not a function 에러가 나타나게 된다.
+ 
 </details>
 
 
