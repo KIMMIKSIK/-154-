@@ -2,7 +2,7 @@
 
 @URL :[GitHub - lydiahallie/javascript-questions: A long list of (advanced) JavaScript questions, and their explanations](https://github.com/lydiahallie/javascript-questions)
 
-하루에 한 문제씩 자바스크립트의 중요 개념을 이해하는 문제 154개를 풀어보고 있습니다. 
+하루에 한 문제씩 자바스크립트의 중요 개념을 이해하며 문제를 풀고 설명을 작성하고 있습니다. 
 
 **1. What's the output?**
 
