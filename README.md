@@ -1779,3 +1779,27 @@ pet.bark();
 </details>
 
 
+
+**56. What's the output?**
+
+```jsx
+const set = new Set([1, 1, 2, 3, 4]);
+
+console.log(set);
+```
+
+- A: `[1, 1, 2, 3, 4]`
+- B: `[1, 2, 3, 4]`
+- C: `{1, 1, 2, 3, 4}`
+- D: `{1, 2, 3, 4}`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+D
+
+Set은 이터러블을 인수로 받아 그대로 이터러블한 객체를 반환한다. 키가 없는 객체의 형태인 것이 배열과 유사하지만 인덱스도 없다. 하지만 이터러블로 for of의 대상이 된다. 특히 중요한 것은 Set의 경우 중복을 허용하지 않는다는 것이다.
+
+</details>
+
+
