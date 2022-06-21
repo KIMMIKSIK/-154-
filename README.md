@@ -1803,3 +1803,24 @@ Set은 이터러블을 인수로 받아 그대로 이터러블한 객체를 반�
 </details>
 
 
+
+### **57. What's the output?**
+
+```jsx
+`// counter.js
+let counter = 10;
+export default counter;`
+
+`// index.js
+import myCounter from './counter';
+
+myCounter += 1;
+
+console.log(myCounter);`
+```
+
+- A: `10`
+- B: `11`
+- C: `Error`
+- D: `NaN`
+
