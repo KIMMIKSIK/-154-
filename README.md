@@ -1803,24 +1803,34 @@ Set은 이터러블을 인수로 받아 그대로 이터러블한 객체를 반�
 </details>
 
 
-
 ### **57. What's the output?**
 
 ```jsx
-`// counter.js
+// counter.js
+
 let counter = 10;
 export default counter;`
 
-`// index.js
+// index.js
+
 import myCounter from './counter';
 
 myCounter += 1;
 
-console.log(myCounter);`
+console.log(myCounter);
 ```
 
 - A: `10`
 - B: `11`
 - C: `Error`
 - D: `NaN`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+자바스크립트의 import로 모듈로서 가져온 값은 읽기 전용이므로 수정할 수 없다. 모듈에서만 값을 변경할 수 있다.
+
+</details>
 
