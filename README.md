@@ -1834,3 +1834,31 @@ C
 
 </details>
 
+
+### **58. What's the output?**
+
+```jsx
+const name = 'Lydia';
+age = 21;
+
+console.log(delete name);
+console.log(delete age);
+```
+
+- A: `false`, `true`
+- B: `"Lydia"`, `21`
+- C: `true`, `true`
+- D: `undefined`, `undefined`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+delete키워드는 boolean값을 반환하며 객체의 요소를 제거하는 연산자이다. age의 경우 암묵적 전역으로 window 객체의 프로퍼티로 등록되지만 name은 그냥 일반 string type의 변수로
+delete키워드는 age에서만 true를 반환하게 된다.
+
+</details>
+
+
