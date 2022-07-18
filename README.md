@@ -1862,3 +1862,30 @@ delete키워드는 age에서만 true를 반환하게 된다.
 </details>
 
 
+
+### **59. What's the output?**
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const [y] = numbers;
+
+console.log(y);
+```
+
+- A: `[[1, 2, 3, 4, 5]]`
+- B: `[1, 2, 3, 4, 5]`
+- C: `1`
+- D: `[1]`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+리액트에서 특히 많이 사용되는 구조분해 할당문법에 해당하며 numbers배열 안에 첫번째 값을 y라는 변수에 대입한다는 의미이다.(react hook useState)
+
+</details>
+
+
+
