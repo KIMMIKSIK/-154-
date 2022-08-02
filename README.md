@@ -1888,4 +1888,25 @@ C
 </details>
 
 
+### **60. What's the output?**
 
+```
+const user = { name: 'Lydia', age: 21 };
+const admin = { admin: true, ...user };
+
+console.log(admin);
+```
+
+- A: `{ admin: true, user: { name: "Lydia", age: 21 } }`
+- B: `{ admin: true, name: "Lydia", age: 21 }`
+- C: `{ admin: true, user: ["Lydia", 21] }`
+- D: `{ admin: true }`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+… 스프레드 연산자를 통해서 활용한 문법으로 위와 같이 해당 배열이나 객체의 요소들을 나열할 수 있다.
+</details>
