@@ -1910,3 +1910,34 @@ B
 
 … 스프레드 연산자를 통해서 활용한 문법으로 위와 같이 해당 배열이나 객체의 요소들을 나열할 수 있다.
 </details>
+
+
+### **61. What's the output?**
+
+```jsx
+const person = { name: 'Lydia' };
+
+Object.defineProperty(person, 'age', { value: 21 });
+
+console.log(person);
+console.log(Object.keys(person));
+```
+
+- A: `{ name: "Lydia", age: 21 }`, `["name", "age"]`
+- B: `{ name: "Lydia", age: 21 }`, `["name"]`
+- C: `{ name: "Lydia"}`, `["name", "age"]`
+- D: `{ name: "Lydia"}`, `["age"]`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+
+B
+
+defineProperty 정적메소드는 해당 객체에 새로운 프로퍼티를 추가하거나 기존의 프로퍼티를 수정하는 것이 가능하다. 이때 `writable`, `configurable, enumerable` 등의 프로퍼티 디스크립션을 세번째 인자에 같이 등록이 가능한데 기본적으로 enumerable속성이 default값 false로 지정되기 때문에 Object.keys처럼 객체의 나열 가능한 키값을 추출하는 배열을 돌릴 때 age를 찾아내지 못해서 B가 답이 된 것이다.
+
+- 참조: [https://blog.woolta.com/categories/3/posts/143](https://blog.woolta.com/categories/3/posts/143)
+
+</details>
