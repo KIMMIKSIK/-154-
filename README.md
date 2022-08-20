@@ -1941,3 +1941,37 @@ defineProperty 정적메소드는 해당 객체에 새로운 프로퍼티를 추
 - 참조: [https://blog.woolta.com/categories/3/posts/143](https://blog.woolta.com/categories/3/posts/143)
 
 </details>
+
+
+
+### **62. What's the output?**
+
+```jsx
+const settings = {
+  username: 'lydiahallie',
+  level: 19,
+  health: 90,
+};
+
+const data = JSON.stringify(settings, ['level', 'health']);
+console.log(data);
+```
+
+- A: `"{"level":19, "health":90}"`
+- B: `"{"username": "lydiahallie"}"`
+- C: `"["level", "health"]"`
+- D: `"{"username": "lydiahallie", "level":19, "health":90}"`
+
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+객체나 일반 타입의 값을 json형식의 문자열로 바꿔주는 json.stringify함수는 2번째 인자로 replacer를 전달할 수 있고 그렇게 되면 해당 키값에 해당하는 값만 json형태로 바꾼 값을 반환한다.
+
+</details>
+
+
