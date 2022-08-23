@@ -1975,3 +1975,32 @@ A
 </details>
 
 
+### **63. What's the output?**
+
+```jsx
+let num = 10;
+
+const increaseNumber = () => num++;
+const increasePassedNumber = number => number++;
+
+const num1 = increaseNumber();
+const num2 = increasePassedNumber(num1);
+
+console.log(num1);
+console.log(num2);
+```
+
+- A: 10, 10
+- B: 10, 11
+- C: 11, 11
+- D: 11, 12
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+후치 증가 연산자의 첫번째 반환값은 아직 증가하기 전이라는 것을 이해해야 문제를 해결할 수 있다.
+</details>
+
+
