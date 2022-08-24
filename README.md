@@ -2004,3 +2004,33 @@ A
 </details>
 
 
+### **64. What's the output?**
+
+```jsx
+const value = { number: 10 };
+
+const multiply = (x = { ...value }) => {
+  console.log((x.number *= 2));
+};
+
+multiply();
+multiply();
+multiply(value);
+multiply(value);
+```
+
+- A: `20`, `40`, `80`, `160`
+- B: `20`, `40`, `20`, `40`
+- C: `20`, `20`, `20`, `40`
+- D: `NaN`, `NaN`, `20`, `40`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+1,2의 호출은 초기값을 설정해 준 상태로 호출할 때마다 새로운 객체를 생성하고 그 프로퍼티는 value객체의 프로퍼티를 복사해온다. value객체의 프로퍼티는 원시타입이기 때문에 값이 복사되고 매번 새로운 값이 복사되는 것이다. 하지만 인자로 value 자체를 넣게 되면 이제 multiply함수가 인자로 받는 x는 value객체와 같은 주소값을 복사하여 하나의 객체를 공유하게 된다.
+
+</details>
+
+
