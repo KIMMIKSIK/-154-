@@ -2034,3 +2034,30 @@ C
 </details>
 
 
+### **65. What's the output?**
+
+ 
+
+```jsx
+[1, 2, 3, 4].reduce((x, y) => console.log(x, y));
+```
+
+- A: `1` `2` and `3` `3` and `6` `4`
+- B: `1` `2` and `2` `3` and `3` `4`
+- C: `1` `undefined` and `2` `undefined` and `3` `undefined` and `4` `undefined`
+- D: `1` `2` and `undefined` `3` and `undefined` `4`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+D
+
+reduce 함수를 사용하였지만 콜백함수의 반환값이 console.log()로서 즉 undefined이기 때문에 누적값이 계속해서 undefined가 나오게 된다.
+
+</details>
+
+
+
+
+
