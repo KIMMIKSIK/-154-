@@ -2059,5 +2059,56 @@ reduce 함수를 사용하였지만 콜백함수의 반환값이 console.log()�
 
 
 
+### **66. With which constructor can we successfully extend the `Dog` class?**
+
+```jsx
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+};
+
+class Labrador extends Dog {
+  // 1
+  constructor(name, size) {
+    this.size = size;
+  }
+  // 2
+  constructor(name, size) {
+    super(name);
+    this.size = size;
+  }
+  // 3
+  constructor(size) {
+    super(name);
+    this.size = size;
+  }
+  // 4
+  constructor(name, size) {
+    this.name = name;
+    this.size = size;
+  }
+
+};
+```
+
+- A: 1
+- B: 2
+- C: 3
+- D: 4
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+클래스를 상속하게 되면 super를 통해 먼저 상위의 클래스를 호출해야하며 이후 상위 클래스를 통해 만들어진 객체(인스턴스)는 상속받은 클래스로 토스되어 과정이 진행된다.
+
+
+</details>
+
+
+
 
 
