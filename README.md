@@ -2110,5 +2110,33 @@ B
 
 
 
+### **67. What's the output?**
+
+```jsx
+// index.js
+console.log('running index.js');
+import { sum } from './sum.js';
+console.log(sum(1, 2));
+
+// sum.js
+console.log('running sum.js');
+export const sum = (a, b) => a + b;
+```
+
+- A: `running index.js`, `running sum.js`, `3`
+- B: `running sum.js`, `running index.js`, `3`
+- C: `running sum.js`, `3`, `running index.js`
+- D: `running index.js`, `undefined`, `running sum.js`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+import 키워드를 사용하게 되면 가장 먼저 import명령이 걸려있는 파일 먼저 실행되게 된다. 이는 리액트도 마찬가지이며 만약 common js의 require명령어를 사용했다면 이와 달리 실행되는 순서에 맞추어서 작동되게 되어 답은 A처럼 나왔을 것이다.
+
+</details>
 
 
