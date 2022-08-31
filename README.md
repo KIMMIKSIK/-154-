@@ -2140,3 +2140,28 @@ import 키워드를 사용하게 되면 가장 먼저 import명령이 걸려있�
 </details>
 
 
+### **68. What's the output?**
+
+```jsx
+console.log(Number(2) === Number(2));
+console.log(Boolean(false) === Boolean(false));
+console.log(Symbol('foo') === Symbol('foo'));
+```
+
+- A: `true`, `true`, `false`
+- B: `false`, `true`, `false`
+- C: `true`, `false`, `true`
+- D: `true`, `true`, `true`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+모든 심볼은 그자체로 유니크하다.
+
+</details>
+
+
+
