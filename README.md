@@ -2164,4 +2164,33 @@ A
 </details>
 
 
+### **69. What's the output?**
+
+```jsx
+const name = 'Lydia Hallie';
+console.log(name.padStart(13));
+console.log(name.padStart(2));
+```
+
+- A: `"Lydia Hallie"`, `"Lydia Hallie"`
+- B: `" Lydia Hallie"`, `" Lydia Hallie"` (`"[13x whitespace]Lydia Hallie"`, `"[2x whitespace]Lydia Hallie"`)
+- C: `" Lydia Hallie"`, `"Lydia Hallie"` (`"[1x whitespace]Lydia Hallie"`, `"Lydia Hallie"`)
+- D: `"Lydia Hallie"`, `"Lyd"`,
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+String.prototype의 프로퍼티이다.
+
+- 참조 : [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+
+</details>
+
+
 
