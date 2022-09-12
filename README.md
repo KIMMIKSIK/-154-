@@ -2194,3 +2194,28 @@ String.prototype의 프로퍼티이다.
 
 
 
+### **70. What's the output?**
+
+```jsx
+console.log('🥑' + '💻');
+```
+
+- A: `"🥑💻"`
+- B: `257548`
+- C: A string containing their code points
+- D: Error
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+문자열 결합 연산자를 통해 두가지 문자열로 인식되는 이모티콘을 결합하게 된다.
+
+</details>
+
+
+
+
+
