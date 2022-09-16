@@ -2217,5 +2217,34 @@ A
 
 
 
+### **71. How can we log the values that are commented out after the console.log statement?**
 
+```jsx
+function* startGame() {
+  const answer = yield 'Do you love JavaScript?';
+  if (answer !== 'Yes') {
+    return "Oh wow... Guess we're gone here";
+  }
+  return 'JavaScript loves you back ❤️';
+}
+
+const game = startGame();
+console.log(/* 1 */); // Do you love JavaScript?
+console.log(/* 2 */); // JavaScript loves you back ❤️
+```
+
+- A: `game.next("Yes").value` and `game.next().value`
+- B: `game.next.value("Yes")` and `game.next.value()`
+- C: `game.next().value` and `game.next("Yes").value`
+- D: `game.next.value()` and `game.next.value("Yes")`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+
+제너레이터를 이용한 문법으로 처음 yield를 만나면서 함수는 잠시 멈추게되고 그값이 value가 된다. 즉 `game.next().value` = 'Do you love JavaScript?' 인 상태가 되고 이후 다시 함수를 진행시키려면 또 다시 next()함수를 호출하는데 이때 값을 대입하여 value상태를 yes로 만들어야 하는 `game.next("Yes").value`가 나오면 된다.
+
+</details>
 
