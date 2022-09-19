@@ -2248,3 +2248,28 @@ C
 
 </details>
 
+
+### **72. What's the output?**
+
+```
+console.log(String.raw`Hello\nworld`);
+```
+
+- A: `Hello world!`
+- B: `Hello` `world`
+- C: `Hello\nworld`
+- D: `Hello\n` `world`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+String.raw는 템플릿리터럴의 태그 함수로 백슬래쉬를 사용하는 기능을 모두 무시할 수 있습니다. 보통 주소를 사용해야하는 경에 사용합니다.
+
+ ex) String.raw`C:\Development\profile\aboutme.html`
+ 
+</details>
+
+
