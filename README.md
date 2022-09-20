@@ -2273,3 +2273,29 @@ String.raw는 템플릿리터럴의 태그 함수로 백슬래쉬를 사용하�
 </details>
 
 
+### **73. What's the output?**
+
+```jsx
+async function getData() {
+  return await Promise.resolve('I made it!');
+
+`const data = getData();
+console.log(data);`
+```
+
+- A: `"I made it!"`
+- B: `Promise {<resolved>: "I made it!"}`
+- C: `Promise {<pending>}`
+- D: `undefined`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+async함수는 그 자체로 프로미스를 반환하게 된다. 즉 아무리 Promise.resolve가 값이 바로 나와도 그 값을 다시 프로미스로 반환하게 되기 때문에 만약 i made it!을 호출하고 싶다면 data.then(res⇒console.log(res))를 해야한다.
+
+</details>
+
+
