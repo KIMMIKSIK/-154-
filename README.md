@@ -2299,3 +2299,33 @@ async함수는 그 자체로 프로미스를 반환하게 된다. 즉 아무리 
 </details>
 
 
+### **74. What's the output?**
+
+```jsx
+function addToList(item, list) {
+  return list.push(item);
+}
+
+const result = addToList('apple', ['banana']);
+console.log(result);
+```
+
+- A: `['apple', 'banana']`
+- B: `2`
+- C: `true`
+- D: `undefined`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+.push 메소드는 해당 배열의 length를 리턴한다. 즉 새로운 apple요소가 추가된 2개의 요소를 가진 배열의 length 2를 출력하게 된다.
+
+</details>
+
+
+
+
+
