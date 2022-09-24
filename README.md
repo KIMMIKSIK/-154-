@@ -2326,6 +2326,29 @@ B
 </details>
 
 
+### **75. What's the output?**
 
+```jsx
+const box = { x: 10, y: 20 };
 
+Object.freeze(box);
+
+const shape = box;
+shape.x = 100;
+
+console.log(shape);
+```
+
+- A: `{ x: 100, y: 20 }`
+- B: `{ x: 10, y: 20 }`
+- C: `{ x: 100 }`
+- D: `ReferenceError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+freeze 메소드를 사용하게 되면 해당 객체의 요소값을 변경하는 것이 불가능해진다. 만약 해당 객체의 요소 값이 객체라면 그 내부 요소인 객체의 값은 변경이 가능하다 왜냐하면 객체는 값이 아닌 주소값을 전달하고 있기 때문이다.
+</details>
 
