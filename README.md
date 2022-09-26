@@ -2352,3 +2352,26 @@ B
 freeze 메소드를 사용하게 되면 해당 객체의 요소값을 변경하는 것이 불가능해진다. 만약 해당 객체의 요소 값이 객체라면 그 내부 요소인 객체의 값은 변경이 가능하다 왜냐하면 객체는 값이 아닌 주소값을 전달하고 있기 때문이다.
 </details>
 
+
+### **76. What's the output?**
+
+```jsx
+const { name: myName } = { name: 'Lydia' };
+
+console.log(name);
+```
+
+- A: `"Lydia"`
+- B: `"myName"`
+- C: `undefined`
+- D: `ReferenceError`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+구조분해 할당에서 콜론(:)을 사용하게 되면 해당 변수의 이름을 새로 지정하는 것이 된다. 즉 실제로는 변수 myName만 있을뿐 name이라는 변수는 생성된 것이 아니기 때문에 답은 C가된다.
+
+</details>
+
