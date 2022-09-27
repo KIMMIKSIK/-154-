@@ -2375,3 +2375,28 @@ C
 
 </details>
 
+
+### **77. Is this a pure function?**
+
+```jsx
+function sum(a, b) {
+  return a + b;
+}
+```
+
+- A: Yes
+- B: No
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+인풋 입력값이 같다면 side effect없이 늘 같은 값을 반환하는 함수로서 이는 순수함수이다.
+
+</details>
+
+
+
+
