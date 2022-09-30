@@ -2398,5 +2398,42 @@ A
 </details>
 
 
+### **78. What is the output?**
+
+```jsx
+const add = () => {
+  const cache = {};
+  return num => {
+    if (num in cache) {
+      return `From cache! ${cache[num]}`;
+    } else {
+      const result = num + 10;
+      cache[num] = result;
+      return `Calculated! ${result}`;
+    }
+  };
+};
+
+const addFunction = add();
+console.log(addFunction(10));
+console.log(addFunction(10));
+console.log(addFunction(5 * 2));
+```
+
+- A: `Calculated! 20` `Calculated! 20` `Calculated! 20`
+- B: `Calculated! 20` `From cache! 20` `Calculated! 20`
+- C: `Calculated! 20` `From cache! 20` `From cache! 20`
+- D: `Calculated! 20` `From cache! 20` `Error`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+addFunction 은 add 함수가 return하는 함수를 값으로 갖게 되며 이제 addFunction을 호출하는 순서에 따라 처음에는 cache객체는 빈객체지만 else문을 돌면서 10 : 20이라는 요소를 갖게된다. 이후 계속 10이라는 요소가 있기 때문에 from cache를 호출하게 되는데 이때 addFunction함수가 add에 있었던 cache라는 함수를 그대로 이어서 사용할 수 있는 이유는 모든 함수는 자신이 생성될 당시에 상위 스코프의 렉시컬 환경을 내부적으로 기억하여 자신의 상위 실행컨텍스트로 지정하기 때문에 결국 호출될 때마다 이 클로저 현상을 통해 객체 cache의 주소를 찾아내게 된다.
+
+</details>
 
 
