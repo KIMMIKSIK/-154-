@@ -2437,3 +2437,33 @@ addFunction 은 add 함수가 return하는 함수를 값으로 갖게 되며 이
 </details>
 
 
+### **79. What is the output?**
+
+```jsx
+const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
+
+for (let item in myLifeSummedUp) {
+  console.log(item);
+}
+
+for (let item of myLifeSummedUp) {
+  console.log(item);
+}
+```
+
+- A: `0` `1` `2` `3` and `"☕"` `"💻"` `"🍷"` `"🍫"`
+- B: `"☕"` `"💻"` `"🍷"` `"🍫"` and `"☕"` `"💻"` `"🍷"` `"🍫"`
+- C: `"☕"` `"💻"` `"🍷"` `"🍫"` and `0` `1` `2` `3`
+- D: `0` `1` `2` `3` and `{0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+
+for in과 for of 반복문을 구분할 줄 알아야하는 문제로서 for in의 경우 반복불가능한 객체 키값등을 반복(배열의 경우 인덱스) , for of 문은 반복이 가능한 이터러블한 요소를 반복하여 출력하는 차이가 있다.
+
+</details>
+
