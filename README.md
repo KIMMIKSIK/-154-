@@ -2490,4 +2490,31 @@ C
 </details>
 
 
+### **81. What is the output?**
+
+```jsx
+function sayHi(name) {
+  return `Hi there, ${name}`;
+}
+
+console.log(sayHi());
+```
+
+- A: `Hi there,`
+- B: `Hi there, undefined`
+- C: `Hi there, null`
+- D: `ReferenceError`
+
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+인자로 아무것도 주어지지않으면 자동적으로 undefined가 할당되게 되어 답은 B가 된다.
+
+</details>
+
+
 
