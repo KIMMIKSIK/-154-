@@ -2517,4 +2517,38 @@ B
 </details>
 
 
+### **82. What is the output?**
+
+```jsx
+var status = '😎';
+
+setTimeout(() => {
+  const status = '😍';
+
+  const data = {
+    status: '🥑',
+    getStatus() {
+      return this.status;
+    },
+  };
+
+  console.log(data.getStatus());
+  console.log(data.getStatus.call(this));
+}, 0);
+```
+
+- A: `"🥑"` and `"😍"`
+- B: `"🥑"` and `"😎"`
+- C: `"😍"` and `"😎"`
+- D: `"😎"` and `"😎"`
+
+<details markdown="1">
+<summary>Answer</summary>
+
+B
+
+첫번째의 호출은 data라고 하는 내부 객체가 this의 대상이 되어 초록 과일을 출력하지만 두번째 호출은 setTimeout에 인자로 주어진 화살표 함수 자체에서 this를 찾게된다. 이때 화살표 함수는 this를 가지고있지않아 스코프 체이닝을 따라 식별자를 찾게 되고 전역객체 window가 가지고 있는 status 선글라스쓴 이모티콘을 출력하게 된다.
+
+</details>
+
 
