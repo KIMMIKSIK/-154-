@@ -2552,3 +2552,28 @@ B
 </details>
 
 
+### **83. What is the output?**
+
+```jsx
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+let city = person.city;
+city = 'Amsterdam';
+
+console.log(person);
+```
+
+- A: `{ name: "Lydia", age: 21 }`
+- B: `{ name: "Lydia", age: 21, city: "Amsterdam" }`
+- C: `{ name: "Lydia", age: 21, city: undefined }`
+- D: `"Amsterdam"`
+<details markdown="1">
+<summary>Answer</summary>
+
+</details>
+>Answer: A
+
+person객체에는 city프로퍼티가 존재하지 않아 undefined를 처음에 변수 city에 담게되고 이는 다시 string타입의 ‘Amsterdam’으로 재할당된다. 결국 person객체 자체에는 어떠한 변화도 생기지 않기 때문에 그대로 출력되게 된다.
