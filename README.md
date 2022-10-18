@@ -2580,3 +2580,36 @@ person객체에는 city프로퍼티가 존재하지 않아 undefined를 처음�
 
 </details>
 
+
+### **84. What is the output?**
+
+```jsx
+function checkAge(age) {
+  if (age < 18) {
+    const message = "Sorry, you're too young.";
+  } else {
+    const message = "Yay! You're old enough!";
+  }
+
+  return message;
+}
+
+console.log(checkAge(21));
+```
+
+- A: `"Sorry, you're too young."`
+- B: `"Yay! You're old enough!"`
+- C: `ReferenceError`
+- D: `undefined`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+블록레벨 스코프인 const를 통한 변수의 생성은 블록 밖에서 해당 변수를 식별할 수 없기 때문에 선언되지 않은 변수를 return하는 것과 마찬가지여서 답은 C가 된다.
+
+</details>
+
+
