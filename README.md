@@ -2613,3 +2613,26 @@ C
 </details>
 
 
+### **85. What kind of information would get logged?**
+
+```jsx
+fetch('https://www.website.com/api/user/1')
+  .then(res => res.json())
+  .then(res => console.log(res));
+```
+
+- A: The result of the `fetch` method.
+- B: The result of the second invocation of the `fetch` method.
+- C: The result of the callback in the previous `.then()`.
+- D: It would always be undefined.
+
+<details markdown="1">
+<summary>Answer</summary>
+
+C
+
+문제의 답은 첫번째 then메소드의 리턴값을 두번째 then메소드의 res 매개변수로 받아서 출력하게 되는 형식이다.
+
+</details>
+
+
