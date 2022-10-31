@@ -2636,3 +2636,24 @@ C
 </details>
 
 
+### **86. Which option is a way to set `hasName` equal to `true`, provided you cannot pass `true` as an argument?**
+
+```jsx
+function getName(name) {
+  const hasName = //
+}
+```
+
+- A: `!!name`
+- B: `name`
+- C: `new Boolean(name)`
+- D: `name.length`
+
+
+<details markdown="1">
+<summary>Answer</summary>
+
+A
+
+</details>
+
